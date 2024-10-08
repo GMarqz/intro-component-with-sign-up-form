@@ -22,10 +22,11 @@ function createP(parentElement, cssClassName, text){
     p.textContent = text
 }
 
-function createBtn(parentElement, cssClassName){
-    const btn = document.createElement("BUTTON")
+function createBtn(parentElement, cssClassName, href){
+    const btn = document.createElement("A")
     parentElement.appendChild(btn)
     btn.className = cssClassName
+    btn.setAttribute("href", href)
 }
 
 function createForm(parentElement, cssClassName){
