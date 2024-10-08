@@ -1,4 +1,5 @@
 import { root } from "../style.js"
+import { stylizeForm } from "./form.js"
 
 function stylizeMobile(){
     const informationHead = document.querySelector(".information__head")
@@ -32,21 +33,36 @@ function stylizeMobile(){
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 24px;
     `)
 
-    const containerFreeTrialBtn = document.querySelector(".container__free__trial-button ")
-
+    const containerFreeTrialBtn = document.querySelector(".container__free__trial-button")
     containerFreeTrialBtn.setAttribute("style", `
         width: 20.4375rem;
         height: 5.5rem;
-        margin: auto 1.5rem 1.5rem 1.5rem;
-        padding: 0 4rem;
+        padding: 1.25rem 4rem;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        line-height: 26px;
+        letter-spacing: 0.27px;
+        text-decoration: none;
 
+        color: ${root.white};
+        font-family: ${root.font};
         border-radius: 0.625rem;
         border: none;
-        background: var(--accent);
+        background: ${root.accent};
         box-shadow: 0px 8px 0px 0px rgba(0, 0, 0, 0.15);
     `)
+
+    const strongTag = document.querySelector(".free__trial__content-strong")
+
+    strongTag.setAttribute("style", `
+        font-weight: bold;
+    `)
+
+    stylizeForm(root)
 
 }
 
